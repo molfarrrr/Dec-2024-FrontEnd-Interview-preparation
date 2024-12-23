@@ -4,5 +4,8 @@
   * Signals
   * Standalone components
   * Zoneless
-* Material 19 - proper configuration of MDC. Proper color pallet utilization & component styling
+  * Build-time environment variables 
+* Material 19 - proper configuration of MDC.
+  * Proper color pallet utilization & component styling 
+  * In-depth theming - application level & component level 
 * Layouting practice - responsive layout using tailwind CSS
