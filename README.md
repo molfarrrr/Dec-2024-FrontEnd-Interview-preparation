@@ -22,6 +22,8 @@
     * You can use the `inject` function to inject instances when in the context
     * Use `runInInjectionContext` function in cases when you need a context & you are not in one
     * How `forwardRef` works?  It actually has to do with how closures in JavaScript work. When you capture a variable inside a closure function it captures the variable reference, not the variable value. `forwardRef` is just a function that captures a class reference into closure and class becomes defined before the function is executed. Angular compiler uses the function resolveForwardRef to unwrap the token or provider type during runtime
+    * `Provide-prefixed` functions can be used to configure different systems without needing to import NgModules. For example, provideRouter is used in place of RouterModule.forRoot to configure the router
+    * If a library only offers an NgModule API for its DI configuration, you can use the importProvidersFrom utility to still use it with bootstrapApplication and other standalone contexts. importProvidersFrom(LibraryModule.forRoot())
   * Signals-driven state management
   * Build-time environment variables 
   * Forms
