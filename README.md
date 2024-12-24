@@ -12,7 +12,16 @@
     * The main benefit of standalone components over NgModule is higher granularity. This allow more things to be lazy-loaded
     * By default, content queries find only direct children of the component and do not traverse into descendants, unless descendants: true.
   * Zoneless (done)
-  * 
+  * DI
+    * The `injection context` is available in these situations:
+      * During construction (via the constructor) of a class being instantiated by the DI system, such as an @Injectable or @Component.
+      * In the initializer for fields of such classes.
+      * In the factory function specified for useFactory of a Provider or an @Injectable.
+      * In the factory function specified for an InjectionToken.
+      * Within a stack frame that runs in an injection context.
+    * You can use the `inject` function to inject instances when in the context
+    * Use `runInInjectionContext` function in cases when you need a context & you are not in one
+    * How `forwardRef` works?  It actually has to do with how closures in JavaScript work. When you capture a variable inside a closure function it captures the variable reference, not the variable value. `forwardRef` is just a function that captures a class reference into closure and class becomes defined before the function is executed. Angular compiler uses the function resolveForwardRef to unwrap the token or provider type during runtime
   * Signals-driven state management
   * Build-time environment variables 
   * Forms
