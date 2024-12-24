@@ -1,0 +1,17 @@
+<p>Counter value: {{counter().count}}</p>
+<div>
+  The counter but bigger: {{derivedCounter()}}
+</div>
+<div>
+  <button (click)="increment()">Increment</button>
+</div>
+
+<div>
+  <button (click)="incrementMutate()">Increment Mutate</button>
+</div>
+
+<p>Model Counter value: {{modelCounter().count}}</p>
+
+<div>
+  <button (click)="incrementModelCounter()">Increment Model Counter</button>
+</div>
