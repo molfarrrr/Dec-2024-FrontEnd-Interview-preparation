@@ -28,6 +28,13 @@
   * Build-time environment variables 
   * Forms
   * Routing
+    * Use provideRouter function in case of the standalone components app
+    * They `undeprecated` the `CanActivate` interface (and the others)
+    * It is possible to lazy-load a standalone component
+    * It is possible to lazy-load routes as well: `loadChildren: () => import('./user.routes).then((m) => m.USER_FEATURE_ROUTES)`. This way it is not necessary to to define all the routes into a single object
+    * It is possible to compose router guard functions to run them sequentially - [Example here](https://github.com/angular/angular/blob/8546b17adec01de69bf314a959ef2d12f6638eb9/packages/router/test/integration.spec.ts#L5157-L5194)
+    * It is possible to define provider in routes
+    * `provideRouter` function has a handful of useful features to explore (look into the app.config.ts).
   * Angular dev tools
 * Material 19 - proper configuration of MDC.
   * Proper color pallet utilization & component styling 
