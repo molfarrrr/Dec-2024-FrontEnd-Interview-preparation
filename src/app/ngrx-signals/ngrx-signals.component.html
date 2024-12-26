@@ -1,0 +1,35 @@
+@if (!loading()) {
+  @for (todo of todos(); track todo.id) {
+    <div>
+      {{todo.name}} <input type="checkbox" [checked]="todo.completed" (change)="setTodoCompleteness(!todo.completed, todo.id)">
+    </div>
+  }
+
+  <div>
+    Count Completed {{countCompleted()}}
+  </div>
+
+  <div>
+    Count Not Completed {{countNotCompleted()}}
+  </div>
+
+  <div>
+    <button (click)="completeAll()">Complete All</button>
+  </div>
+
+  <div>
+    <button (click)="resetAll()">Reset All</button>
+  </div>
+
+  <div>
+    <input #input>
+    <button (click)="addTodo(input.value); input.value = ''">Add To Do</button>
+  </div>
+
+  <div>
+    <button (click)="reloadTodos()">Reload TODOs</button>
+  </div>
+
+} @else {
+  <h1>LOADING....</h1>
+}

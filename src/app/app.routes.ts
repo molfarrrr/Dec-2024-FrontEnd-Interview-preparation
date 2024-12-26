@@ -9,5 +9,10 @@ export const routes: Routes = [
     // End up populated into the component as input
     resolve: {},
     providers: []
+  },
+  {
+    path: 'ngrx-signals',
+    loadComponent: () => import('./ngrx-signals/ngrx-signals.component').then(x => x.NgrxSignalsComponent),
+    providers: []
   }
 ];

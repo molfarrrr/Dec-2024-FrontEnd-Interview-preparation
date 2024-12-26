@@ -25,6 +25,19 @@
     * `Provide-prefixed` functions can be used to configure different systems without needing to import NgModules. For example, provideRouter is used in place of RouterModule.forRoot to configure the router
     * If a library only offers an NgModule API for its DI configuration, you can use the importProvidersFrom utility to still use it with bootstrapApplication and other standalone contexts. importProvidersFrom(LibraryModule.forRoot())
   * Signals-driven state management
+    * Provided by ngrx/signal lib
+    * Signal store has taken the functional approach
+    * Turns the elements of the state into signals
+    * To create the store
+      * Create the state type
+      * Create the initial state
+      * Create the store by using the signalStore function
+        * Signal store function is a pipeline. Therefore, each function excepts the result og the previous function. Thus, order matters!
+      * RxMethod factory method allow using rxjs inside the the withMethods factory
+        * Returns a function that accepts a static value, a signal or an observable. For the last 2 cases will re-ran on change
+      * [NgRX entity management docs](https://ngrx.io/guide/signals/signal-store/entity-management)
+  * Conventional NgRx state management
+  * Component NgRx state management
   * Build-time environment variables 
   * Forms
   * Routing
