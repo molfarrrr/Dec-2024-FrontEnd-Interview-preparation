@@ -37,6 +37,8 @@
         * Returns a function that accepts a static value, a signal or an observable. For the last 2 cases will re-ran on change
       * [NgRX entity management docs](https://ngrx.io/guide/signals/signal-store/entity-management)
   * Conventional NgRx state management
+    * New higher level functions are available like createGrpoupActions & createFeature
+    * It is possible to dispatch actions on signal changes - `store.dispatch(() => loadBook({ id: this.bookId() })));`. The `dispatch` executes initially and every time the `bookId` changes 
   * Component NgRx state management
   * Build-time environment variables 
   * Forms
