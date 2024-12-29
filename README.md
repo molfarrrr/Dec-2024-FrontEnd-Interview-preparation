@@ -12,8 +12,22 @@
     * The main benefit of standalone components over NgModule is higher granularity. This allow more things to be lazy-loaded
     * By default, content queries find only direct children of the component and do not traverse into descendants, unless descendants: true.
   * Zoneless (done)
-  * Build-time environment variables
+  * Build-time environment variables (done)
+  * Components
+    * `hostDirectives` - add a directive to the component from the decorator. You can also add `hostDirectives` to other directives, in addition to components. This enables the transitive aggregation of multiple behaviors. Host bound directive executes its constructor & lifecycle events before the host.
   * Forms
+    * Typed forms
+      * Typed form suppose to improve the development experience & reduce bugs
+      * Typing can be defined implicitly 
+      * If you need to specify a type - use the control type (`FormControl<string>`) not the value type. `const email = new FormControl<string|null>(null);`
+      * `formControl.reset()` resets the value of a control to `null`
+      * It is possible to configure a form control to be `nonNullable` by providing this option on creation. With `fb`: fb.nonNullable.group
+    * Dynamic forms
+      * The `FormRecord` class is designed for the case when the final form type is unknown ahead of time. can also be built with the `FormBuilder: fb.record`
+      * When to use FormRecord:
+        * User-defined form fields: When users can create form fields with arbitrary names.
+        * Dynamically generated forms: When forms are constructed based on data fetched from a server.
+        * Flexible data structures: When you need a form model that can adapt to changing data structures.
   * Routing
     * Use provideRouter function in case of the standalone components app
     * They `undeprecated` the `CanActivate` interface (and the others)
