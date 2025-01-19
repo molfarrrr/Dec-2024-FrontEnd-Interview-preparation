@@ -10,7 +10,6 @@ import { ToDoData } from './store.model';
   styleUrl: './ngrx-signals.component.css',
   providers: [
     TodosStore,
-    TodoService
   ]
 })
 export class NgrxSignalsComponent {

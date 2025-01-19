@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { ToDoData } from './store.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class TodoService {
   getTodos(): Observable<ToDoData[]> {
     return of([

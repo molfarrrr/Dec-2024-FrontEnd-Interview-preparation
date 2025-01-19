@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, ElementRef, inject, Signal, viewChi
 import { RouterOutlet } from '@angular/router';
 import { CounterData, TestComponent } from './test/test.component';
 import { GlobalStore } from './ngrx-signals/global.store';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, Observable, shareReplay } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +20,17 @@ export class AppComponent {
 
   testComponent: Signal<TestComponent> = viewChild.required(TestComponent, {});
   saveButton: Signal<ElementRef<HTMLButtonElement>> = viewChild.required<ElementRef<HTMLButtonElement>>('save');
+
+  private breakpointObserver = inject(BreakpointObserver);
+
+  constructor() {
+    console.log(Breakpoints)
+  }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
 }
