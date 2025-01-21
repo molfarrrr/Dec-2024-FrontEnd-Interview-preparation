@@ -4,12 +4,15 @@ import { CounterData, TestComponent } from './test/test.component';
 import { GlobalStore } from './ngrx-signals/global.store';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, Observable, shareReplay } from 'rxjs';
+import { NavigationComponent } from './material/navigation/navigation.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TestComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  imports: [
+    NavigationComponent
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
