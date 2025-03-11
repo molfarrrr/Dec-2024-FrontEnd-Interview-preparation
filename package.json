@@ -24,6 +24,7 @@
     "@ngrx/router-store": "^19.0.0",
     "@ngrx/signals": "^19.0.0",
     "@ngrx/store": "^19.0.0",
+    "@tailwindcss/postcss": "^4.0.13",
     "ngrx-immer": "^3.0.0",
     "rxjs": "~7.8.0",
     "sass": "^1.83.0",

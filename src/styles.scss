@@ -2,6 +2,8 @@
 @use '@angular/material' as mat;
 @import './styles/angular-dev-theme-tokens';
 
+@import "tailwindcss";
+
 html,
 body {
   height: 100%;
