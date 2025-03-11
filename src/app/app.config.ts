@@ -23,16 +23,19 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
     provideRouter(routes,
-    // Features
-    withComponentInputBinding(), // resolvers results and data directly to inputs of component associated with route
-    withRouterConfig({
-        onSameUrlNavigation: 'reload',
-    }), withPreloading(FlagBasedPreloadingStrategy), withDebugTracing()),
+      // Features
+      // withComponentInputBinding(), // resolvers results and data directly to inputs of component associated with route
+      // withRouterConfig({
+      //   onSameUrlNavigation: 'reload',
+      // }),
+      // withPreloading(FlagBasedPreloadingStrategy),
+      withDebugTracing()
+    ),
     provideAnimationsAsync(),
     provideExperimentalCheckNoChangesForDebug({
-        exhaustive: true,
-        interval: 1000,
-        useNgZoneOnStable: false
+      exhaustive: true,
+      interval: 1000,
+      useNgZoneOnStable: false
     }),
     provideStore(),
     provideRouterStore(),

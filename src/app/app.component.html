@@ -1,2 +1,17 @@
-<app-navigation></app-navigation>
+<div style="margin-left: 200px">
+  <label id="example-radio-group-label">Pick your density</label>
+  <mat-radio-group
+    class="example-radio-group"
+    [(ngModel)]="density">
+
+    @for (season of seasons; track season) {
+      <mat-radio-button class="example-radio-button" [value]="season">{{season}}</mat-radio-button>
+    }
+
+  </mat-radio-group>
+</div>
+
+<div [ngClass]="'density-' + density">
+  <app-navigation></app-navigation>
+</div>
 

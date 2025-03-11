@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+
+.density-2 {
+  @include mat.all-component-densities(2)
+}
+
+.density-1 {
+  @include mat.all-component-densities(1)
+}
+
+.density-0 {
+  @include mat.all-component-densities(0)
+}
+
+.density--1 {
+  @include mat.all-component-densities(-1)
+}
+
+.density--2 {
+  @include mat.all-component-densities(-2)
+}
+
+.density--3 {
+  @include mat.all-component-densities(-3)
+}
+
+.density--4 {
+  @include mat.all-component-densities(-4)
+}
+
+.density--5 {
+  @include mat.all-component-densities(-4)
+}
